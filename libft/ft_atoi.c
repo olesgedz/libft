@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 15:37:56 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/11 18:45:12 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/13 23:55:43 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ static void		ft_atoi_skip(const char **str, int *sign)
 {
 	while (**str == ' ' || **str == '\n'
 	|| **str == '\t' || **str == '\r'
-	|| **str == '\v' || **str == '\f' || **str == '0')
+	|| **str == '\v' || **str == '\f')
 		(*str)++;
 	if (**str == '+' || **str == '-')
 	{
