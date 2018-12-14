@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 18:30:25 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/08 20:19:32 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/15 01:55:56 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char			*ft_strmap(char const *s, char (*f)(char))
 {
 	char *new;
 
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	if (!(new = (char *)(malloc(sizeof(char) * ft_strlen((char *)s) + 1))))
 		return (NULL);

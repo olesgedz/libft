@@ -41,8 +41,6 @@ all: $(NAME)
 clean:
 	$(RM) $(OBJ)
 
-main:
-	(gcc -c -Wall -Werror -Wextra *.c $(HDDIRS)) && (ar rc libft.a *.o)
 fclean: clean
 	$(RM) $(NAME)
 
