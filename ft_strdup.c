@@ -6,14 +6,14 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 16:07:42 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/11 19:06:46 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/15 02:20:51 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char *new;
 
