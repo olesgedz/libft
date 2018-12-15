@@ -6,13 +6,13 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:32:09 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/15 02:26:39 by olesgedz         ###   ########.fr       */
+/*   Updated: 2018/12/15 10:35:05 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t		ft_strlen(const char *str)
+size_t		ft_strlen(const char *s)
 {
 	int count;
 

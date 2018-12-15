@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/15 10:24:53 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/15 10:40:19 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				*ft_memset(void *str, int c, size_t n);
+void				*ft_memset(void *b, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
-void				*ft_memcpy(void *dest, const void *source, size_t count);
+void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -45,10 +45,11 @@ int					ft_isprint(int c);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *s1, const char *s2, size_t len);
+char				*ft_strnstr(const char *haystack, \
+	const char *needle, size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-size_t				ft_strlcat(char *s1, const char *s2, size_t size);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
 
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
