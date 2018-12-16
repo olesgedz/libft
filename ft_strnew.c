@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 16:02:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/08 18:31:39 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/16 12:46:54 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char		*ft_strnew(size_t size)
 	char *new_str;
 
 	new_str = NULL;
+	if (size >= 18446744073709551615ULL)
+		return (NULL);
 	if (!(new_str = (char *)(malloc(sizeof(char) * size + 1))))
 		return (NULL);
 	ft_bzero(new_str, size + 1);
