@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 19:49:34 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/11/29 20:11:01 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/16 14:21:51 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (s == NULL)
 		return (NULL);
 	if (!(ft_strlen(s) - start >= len))
+		return (NULL);
+	if (len + 1 < len)
 		return (NULL);
 	if (!(new = (char *)(malloc(sizeof(char) * len + 1))))
 		return (NULL);
