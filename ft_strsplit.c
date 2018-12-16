@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 19:25:35 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/16 13:57:30 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/16 14:32:29 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static int		ft_strsplit_cleanup(char ***dst)
 	}
 	free(*dst);
 	*dst = NULL;
-	free(dst);
 	dst = NULL;
 	return (1);
 }
