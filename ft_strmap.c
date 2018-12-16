@@ -30,7 +30,7 @@ char			*ft_strmap(char const *s, char (*f)(char))
 
 	if (s == NULL || f == NULL)
 		return (NULL);
-	if (!(new = (char *)(malloc(sizeof(char) * ft_strlen((char *)s) + 1))))
+	if (!(new = (char *)(malloc(sizeof(char) * ft_strlen(s) + 1))))
 		return (NULL);
 	ft_strcpy(new, s);
 	ft_u_striter(new, f);

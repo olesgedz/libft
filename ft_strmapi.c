@@ -34,7 +34,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL || f == NULL)
 		return (NULL);
-	if (!(new = (char *)(malloc(sizeof(char) * ft_strlen((char *)s) + 1))))
+	if (!(new = (char *)(malloc(sizeof(char) * ft_strlen(s) + 1))))
 		return (NULL);
 	ft_strcpy(new, s);
 	ft_u_striteri(new, f);
