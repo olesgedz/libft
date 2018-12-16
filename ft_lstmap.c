@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 18:33:53 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/16 13:55:59 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/16 14:33:14 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void		ft_lstmap_clean(t_list **begin)
 		*begin = next_tmp;
 	}
 	*begin = NULL;
-	free(begin);
 	begin = NULL;
 }
 
