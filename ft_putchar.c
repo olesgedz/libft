@@ -6,7 +6,7 @@
 /*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:37:38 by olesgedz          #+#    #+#             */
-/*   Updated: 2018/12/08 20:14:14 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/20 20:59:05 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void				ft_putchar(char c)
 	char	strm[4];
 	int		length;
 
-	if ((unsigned char)c < 0x80)
+	if (/*(unsigned char)c < 0x80*/1)
 		write(1, &c, 1);
 	else
 	{
