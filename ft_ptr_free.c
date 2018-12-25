@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 17:40:41 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/25 17:46:04 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/25 17:46:18 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void		ft_ptr_free(void **ptr)
 {
-	free(ptr);
+	free(*ptr);
 	*ptr = NULL;
 }
