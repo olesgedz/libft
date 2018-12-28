@@ -28,7 +28,7 @@ ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
 ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c \
 ft_lstprint.c ft_arraymax.c ft_arraymin.c ft_swap_int.c ft_arrayprint.c \
-ft_arraysort.c ft_lstdel_u.c ft_lstdelmid.c ft_ptr_free.c
+ft_arraysort.c ft_lstdel_u.c ft_lstdelmid.c ft_ptr_free.c get_next_line.c
 
 OBJ=$(SRC:.c=.o)
 
