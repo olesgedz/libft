@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/29 18:55:06 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/01/02 23:17:06 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int					ft_arraymin(int *array, size_t length);
 void				ft_swap_int(int *a, int *b);
 void				ft_arrayprint(int *array, size_t length);
 void				ft_arraysort(int *array, size_t length);
-void				ft_lst_clean(t_list **begin);
+void				ft_lstclean(t_list **begin);
 void				ft_ptr_free(char **ptr);
 void				ft_lstdel_u(t_list **list);
 int					ft_lstdelmid(t_list **begin, t_list **list);

@@ -6,16 +6,18 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 16:04:10 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/25 16:07:56 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/01/02 23:16:44 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-void		ft_lst_clean(t_list **begin)
+void		ft_lstclean(t_list **begin)
 {
 	t_list *next_tmp;
 
+	next_tmp = NULL;
 	while (*begin)
 	{
 		free((*begin)->content);
