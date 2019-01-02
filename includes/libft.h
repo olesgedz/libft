@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/28 17:49:15 by jblack-b         ###   ########.fr       */
+/*   Updated: 2018/12/29 18:55:06 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ void				ft_ptr_free(char **ptr);
 void				ft_lstdel_u(t_list **list);
 int					ft_lstdelmid(t_list **begin, t_list **list);
 int					get_next_line(const int fd, char **line);
+void				ft_printmap(char **map);
 
 #endif
