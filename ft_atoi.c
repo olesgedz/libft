@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 15:37:56 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/16 12:07:42 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/01/15 01:00:26 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,21 @@ int				ft_atoi(const char *str)
 {
 	long	int				nbr;
 	int						sign;
-	int						digits;
 
 	sign = 1;
 	nbr = 0;
-	digits = 0;
 	ft_atoi_skip(&str, &sign);
 	while ('0' <= *str && *str <= '9')
 	{
+		if (nbr + nbr * 10 + *str - '0' < nbr)
+		{
+			if (sign == 1)
+				return (-1);
+			else
+				return (0);
+		}
 		nbr = nbr * 10 + *str - '0';
 		str++;
 	}
-	if ((9223372036854775807 <= nbr && sign == 1))
-		return (-1);
-	if ((9223372036854775807 < nbr && sign == -1))
-		return (0);
 	return ((int)(nbr) * sign);
 }
