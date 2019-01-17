@@ -6,7 +6,7 @@
 /*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/17 03:09:49 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/01/17 03:12:04 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/01/17 10:42:12 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char		**ft_2darraynew(size_t y, size_t x, char c)
 {
-	char			**new;
+	char				**new;
 	size_t				j;
 	size_t				k;
 

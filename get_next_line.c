@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 16:20:41 by jblack-b          #+#    #+#             */
-/*   Updated: 2018/12/28 17:51:14 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/01/17 10:49:53 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-static t_list	*ft_getfile(t_list **file, int fd)
+static t_list		*ft_getfile(t_list **file, int fd)
 {
 	t_list *tmp;
 
@@ -36,7 +36,7 @@ static t_list	*ft_getfile(t_list **file, int fd)
 	return (tmp);
 }
 
-static char	*ft_getline(t_list *lst, char **line)
+static char			*ft_getline(t_list *lst, char **line)
 {
 	char	*temp;
 	size_t	i;
@@ -62,7 +62,7 @@ static char	*ft_getline(t_list *lst, char **line)
 	return (*line);
 }
 
-int		get_next_line(const int fd, char **line)
+int					get_next_line(const int fd, char **line)
 {
 	int				ret;
 	static	t_list	*file;
@@ -85,12 +85,8 @@ int		get_next_line(const int fd, char **line)
 			break ;
 	}
 	ft_ptr_free(&buf);
-	if (ret < BUFF_SIZE && !ft_strlen((char *)lst->content) && ft_lstdelmid(&file, &lst))
-	{
-
+	if (ret < BUFF_SIZE && !ft_strlen((char *)lst->content))
 		return (0);
-	}
-
 	*line = ft_getline(lst, line);
 	return (1);
 }
