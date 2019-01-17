@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/01/07 01:06:13 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/01/17 03:16:20 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ typedef struct		s_list
 	int				content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct	s_point
+{
+	int			x;
+	int			y;
+}				t_point;
 
 void				*ft_memset(void *b, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -97,4 +103,6 @@ int					get_next_line(const int fd, char **line);
 void				ft_printmap(char **map);
 int					ft_2darrayclean(char ***dst);
 
+char		**ft_2darraynew(size_t y, size_t x, char c);
+t_point		*ft_point_new(int x, int y);
 #endif
