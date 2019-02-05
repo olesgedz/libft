@@ -12,7 +12,7 @@ LDLIBS=-lft
 
 HDDIRS=-I ./includes
 
-SRC=ft_memset.c ft_bzero.c ft_memcpy.c  ft_memccpy.c \
+SOURCES_LST=ft_memset.c ft_bzero.c ft_memcpy.c  ft_memccpy.c \
 ft_memmove.c ft_memchr.c ft_memcmp.c ft_memalloc.c \
 ft_memdel.c \
 ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c \
@@ -32,12 +32,18 @@ ft_arraysort.c ft_lstdel_u.c ft_lstdelmid.c ft_ptr_free.c get_next_line.c \
 ft_printmap.c ft_2darrayclean.c ft_2darraynew.c ft_point_new.c ft_lstcount.c \
 ft_lstrev.c ft_is_space.c ft_countwords.c
 
-OBJ=$(SRC:.c=.o)
+OBJ=$(SOURCES_LST:.c=.o)
+SOURCES_DIRECTORY = ./sources/
+SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LST))
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(SRC) $(HDDIRS)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@$(CC) $(CFLAGS) -c $(SOURCES) $(HDDIRS)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "$(GREEN)libft is compiled$(RESET)"
 all: $(NAME)
 
 clean:
