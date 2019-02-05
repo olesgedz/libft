@@ -13,7 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
-
+#define ABS(x)  ( (x < 0) ? -(x) : x )
 typedef struct		s_list
 {
 	void			*content;
@@ -105,4 +105,8 @@ int					ft_2darrayclean(char ***dst);
 
 char				**ft_2darraynew(size_t y, size_t x, char c);
 t_point				*ft_point_new(int x, int y);
+size_t	ft_lstcount(t_list *lst);
+void		ft_lstrev(t_list **alst);
+int		ft_is_space(char c);
+size_t	ft_countwords(char *str, char sep);
 #endif
