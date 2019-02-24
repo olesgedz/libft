@@ -67,9 +67,9 @@ clean:
 	@rm -rf $(OBJECTS_DIRECTORY)
 
 fclean: clean
-	@rm -f $(LIBFT)
+	@rm -f $(NAME)
 	@echo "$(NAME): $(RED)$(LIBFT) was deleted$(RESET)"
 
-re: fclean all
+re:
 	@$(MAKE) fclean
 	@$(MAKE) all
