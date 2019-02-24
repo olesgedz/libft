@@ -4,15 +4,16 @@ CC=gcc
 
 CFLAGS=-Wall -Wextra -Werror
 
-RM=rm -f
+INCLUDES = -I$(HEADERS_DIRECTORY)
+HEADERS_LIST =libft.h
 
-LDFLAGS=-L.
 
-LDLIBS=-lft
+HEADERS_DIRECTORY = includes/
+HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
-HDDIRS=-I ./includes
+SOURCES_DIRECTORY = sources/
 
-SOURCES_LST=ft_memset.c ft_bzero.c ft_memcpy.c  ft_memccpy.c \
+SOURCES_LIST=ft_memset.c ft_bzero.c ft_memcpy.c  ft_memccpy.c \
 ft_memmove.c ft_memchr.c ft_memcmp.c ft_memalloc.c \
 ft_memdel.c \
 ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c \
@@ -32,24 +33,43 @@ ft_arraysort.c ft_lstdel_u.c ft_lstdelmid.c ft_ptr_free.c get_next_line.c \
 ft_printmap.c ft_2darrayclean.c ft_2darraynew.c ft_point_new.c ft_lstcount.c \
 ft_lstrev.c ft_is_space.c ft_countwords.c
 
-OBJ=$(SOURCES_LST:.c=.o)
-SOURCES_DIRECTORY = ./sources/
-SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LST))
+SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
+
+OBJECTS_DIRECTORY = objects/
+OBJECTS_LIST = $(patsubst %.c, %.o, $(SOURCES_LIST))
+OBJECTS	= $(addprefix $(OBJECTS_DIRECTORY), $(OBJECTS_LIST))
+
+# COLORS
+
 GREEN = \033[0;32m
 RED = \033[0;31m
 RESET = \033[0m
 
-$(NAME):
-	@$(CC) $(CFLAGS) -c $(SOURCES) $(HDDIRS)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
-	@echo "$(GREEN)libft is compiled$(RESET)"
+.PHONY: all clean fclean re
+
 all: $(NAME)
 
+$(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
+	@echo "\n$(NAME): $(GREEN)object files were created$(RESET)"
+	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
+
+$(OBJECTS_DIRECTORY):
+	@mkdir -p $(OBJECTS_DIRECTORY)
+	@echo "$(NAME): $(GREEN)$(OBJECTS_DIRECTORY) was created$(RESET)"
+
+$(OBJECTS_DIRECTORY)%.o : $(SOURCES_DIRECTORY)%.c $(HEADERS)
+	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
+	@echo "$(GREEN).$(RESET)\c"
+
 clean:
-	$(RM) $(OBJ)
+	@rm -rf $(OBJECTS_DIRECTORY)
 
 fclean: clean
-	$(RM) $(NAME)
+	@rm -f $(LIBFT)
+	@echo "$(NAME): $(RED)$(LIBFT) was deleted$(RESET)"
 
 re: fclean all
+	@$(MAKE) fclean
+	@$(MAKE) all
