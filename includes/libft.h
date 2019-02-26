@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/02/05 21:24:52 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/02/26 20:57:52 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define LIBFT_H
 # include <string.h>
 # define ABS(x)  ( (x < 0) ? -(x) : x )
-
+#define TRUE 1
+#define FALSE 0
 typedef struct		s_list
 {
 	void			*content;
