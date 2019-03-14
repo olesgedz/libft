@@ -31,7 +31,7 @@ ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c \
 ft_lstprint.c ft_arraymax.c ft_arraymin.c ft_swap_int.c ft_arrayprint.c \
 ft_arraysort.c ft_lstdel_u.c ft_lstdelmid.c ft_ptr_free.c get_next_line.c \
 ft_printmap.c ft_2darrayclean.c ft_2darraynew.c ft_point_new.c ft_lstcount.c \
-ft_lstrev.c ft_is_space.c ft_countwords.c ft_strnewch.c
+ft_lstrev.c ft_is_space.c ft_countwords.c ft_strnewch.c  ft_sign.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 

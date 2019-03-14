@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/02/28 20:38:47 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/03/14 22:29:01 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,5 @@ void				ft_lstrev(t_list **alst);
 int					ft_is_space(char c);
 size_t				ft_countwords(char *str, char sep);
 char				*ft_strnewch(size_t n, char c);
+int					ft_sign(double n);
 #endif
