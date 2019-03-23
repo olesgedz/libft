@@ -45,6 +45,22 @@ GREEN = \033[0;32m
 RED = \033[0;31m
 RESET = \033[0m
 
+ifneq ($(words $(MAKECMDGOALS)),1)
+.DEFAULT_GOAL = all
+%:
+		@$(MAKE) $@ --no-print-directory -rRf $(firstword $(MAKEFILE_LIST))
+else
+ifndef ECHO
+T := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
+		-nrRf $(firstword $(MAKEFILE_LIST)) \
+		ECHO="COUNTTHIS" | grep -c "COUNTTHIS")
+
+N := x
+C = $(words $N)$(eval N := x $N)
+ECHO = echo -ne "\r [`expr $C '*' 100 / $T`%]"
+endif
+
+
 .PHONY: all clean fclean re
 
 all: $(NAME)
@@ -53,6 +69,7 @@ $(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 	@echo "\n$(NAME): $(GREEN)object files were created$(RESET)"
+	@$(ECHO) $@
 	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
 
 $(OBJECTS_DIRECTORY):
@@ -61,7 +78,7 @@ $(OBJECTS_DIRECTORY):
 
 $(OBJECTS_DIRECTORY)%.o : $(SOURCES_DIRECTORY)%.c $(HEADERS)
 	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
-	@echo "$(GREEN).$(RESET)\c"
+	@$(ECHO) $@
 
 clean:
 	@rm -rf $(OBJECTS_DIRECTORY)
@@ -73,3 +90,4 @@ fclean: clean
 re:
 	@$(MAKE) fclean
 	@$(MAKE) all
+endif
