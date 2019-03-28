@@ -7,7 +7,7 @@ CFLAGS=-Wall -Wextra -Werror
 INCLUDES = -I$(HEADERS_DIRECTORY)
 HEADERS_LIST =libft.h
 
-
+DIRECTORY =  $(shell pwd)
 HEADERS_DIRECTORY = includes/
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
@@ -41,25 +41,21 @@ OBJECTS	= $(addprefix $(OBJECTS_DIRECTORY), $(OBJECTS_LIST))
 
 # COLORS
 
-GREEN = \033[0;32m
-RED = \033[0;31m
-RESET = \033[0m
+CLEAR_LINE	:= \033[2K
+BEGIN_LINE	:= \033[A
+COL_END		:= \033[0m
+COL_RED		:= \033[1;31m
+COL_GREEN	:= \033[1;32m
+COL_YELLOW	:= \033[1;33m
+COL_BLUE	:= \033[1;34m
+COL_VIOLET	:= \033[1;35m
+COL_CYAN	:= \033[1;36m
+COL_WHITE	:= \033[1;37m
 
-ifneq ($(words $(MAKECMDGOALS)),1)
-.DEFAULT_GOAL = all
-%:
-		@$(MAKE) $@ --no-print-directory -rRf $(firstword $(MAKEFILE_LIST))
-else
-ifndef ECHO
-T := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
-		-nrRf $(firstword $(MAKEFILE_LIST)) \
-		ECHO="COUNTTHIS" | grep -c "COUNTTHIS")
+PREC = echo -ne "\r [`expr $(CURRENT_FILES) '*' 100 / $(TOTAL_FILES)`%]"
 
-N := x
-C = $(words $N)$(eval N := x $N)
-ECHO = echo -ne "\r [`expr $C '*' 100 / $T`%]"
-endif
-
+TOTAL_FILES := $(shell echo $(SOURCES_LIST) | wc -w | sed -e 's/ //g')
+CURRENT_FILES = $(shell find $(DIRECTORY)/objects/ -type f 2> /dev/null | wc -l | sed -e 's/ //g')
 
 .PHONY: all clean fclean re
 
@@ -68,9 +64,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
-	@echo "\n$(NAME): $(GREEN)object files were created$(RESET)"
-	@$(ECHO) $@
-	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
+	@echo "$(CLEAR_LINE)$(COL_BLUE)[$(NAME)] $(COL_GREEN)Finished compilation. Output file : $(COL_VIOLET)$(PWD)/$(NAME)$(COL_END)"
 
 $(OBJECTS_DIRECTORY):
 	@mkdir -p $(OBJECTS_DIRECTORY)
@@ -78,10 +72,13 @@ $(OBJECTS_DIRECTORY):
 
 $(OBJECTS_DIRECTORY)%.o : $(SOURCES_DIRECTORY)%.c $(HEADERS)
 	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
-	@$(ECHO) $@
+	@echo "$(CLEAR_LINE)\r [`expr $(CURRENT_FILES) '*' 100 / $(TOTAL_FILES)`%] $(COL_BLUE)[$(NAME)] $(COL_GREEN)Compiling file [$(COL_VIOLET)$<$(COL_GREEN)].($(CURRENT_FILES) / $(TOTAL_FILES))$(COL_END)$(BEGIN_LINE)"
 
 clean:
 	@rm -rf $(OBJECTS_DIRECTORY)
+
+nu:
+	@echo -ne "\r [`expr $(CURRENT_FILES) '*' 100 / $(TOTAL_FILES)`%]"
 
 fclean: clean
 	@rm -f $(NAME)
@@ -90,4 +87,3 @@ fclean: clean
 re:
 	@$(MAKE) fclean
 	@$(MAKE) all
-endif
