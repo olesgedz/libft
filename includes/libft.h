@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/09 21:00:46 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/04/23 03:30:53 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,25 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_list2w
+{
+	void			*content;
+	int				content_size;
+	struct s_list2w	*next;
+	struct s_list2w	*before;
+}					t_list2w;
+
 typedef struct		s_point
 {
 	int				x;
 	int				y;
 }					t_point;
 
+typedef struct		s_stack
+{
+	t_list *top;
+	size_t size;
+}	t_stack;
 void				*ft_memset(void *b, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
@@ -114,4 +127,13 @@ int					ft_is_space(char c);
 size_t				ft_countwords(char *str, char sep);
 char				*ft_strnewch(size_t n, char c);
 int					ft_sign(double n);
+
+void				ft_stack_print(t_stack *stack);
+t_stack				*ft_stack_create(void *content, size_t content_size);
+void				ft_stack_push(t_stack *stack, void *content,  size_t content_size);
+t_list				*ft_stack_pop(t_stack *stack);
+t_list				*ft_stack_peek(t_stack *stack);
+void				ft_lst2w_pushback(t_list2w *begin, t_list2w *new);
+t_list2w			*ft_lst2w_new(void *content, size_t content_size);
+void				ft_memprint(void *s, size_t n);
 #endif
