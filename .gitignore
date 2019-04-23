@@ -2,3 +2,5 @@
 *.o
 .DS_Store
 libft.a
+*.out
+.vs*
