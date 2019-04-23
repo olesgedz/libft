@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/23 08:45:34 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/04/23 20:28:03 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,18 +170,23 @@ void				ft_memprint(void *s, size_t n);
 
 
 
-void		ft_print_node(void *item);
-t_btree		*ft_btree_create_node(void *item);
-void    ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *));
-void    ft_btree_apply_infix(t_btree *root, void (*applyf)(void*));
-void        ft_btree_apply_suffix(t_btree *root, void (*applyf)(void*));
-void    ft_btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *));
-void    *ft_btree_search_item(t_btree *root, void *data_ref,\
-        int (*cmpf)(void *, void *));
-int     ft_btree_level_count(t_btree *root);
-void	ft_queue_push(t_queue **queue, t_btree *root, int current_level);
-t_queue	*ft_queue_pop(t_queue **queue);
-void	ft_btree_apply_by_level(t_btree *root\
-		, void (*applyf)(void *item, int current_level, int is_first_elem));
-void ft_btree_print(t_btree *root, int spaces);
+void				ft_print_node(void *item);
+t_btree				*ft_btree_create_node(void *item);
+void				ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *));
+void				ft_btree_apply_infix(t_btree *root, void (*applyf)(void*));
+void				ft_btree_apply_suffix(t_btree *root, void (*applyf)(void*));
+void				ft_btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *));
+void				*ft_btree_search_item(t_btree *root, void *data_ref,\
+				int (*cmpf)(void *, void *));
+int					ft_btree_level_count(t_btree *root);
+void				ft_queue_push(t_queue **queue, t_btree *root, int current_level);
+					t_queue	*ft_queue_pop(t_queue **queue);
+void				ft_btree_apply_by_level(t_btree *root,\
+			 		void (*applyf)(void *item, int current_level, int is_first_elem));
+void				ft_btree_print(t_btree *root, int spaces);
+
+
+t_rb_node			*ft_rb_node_create(void *data);
+void				ft_rb_insert(t_rb_node **root, void *data, int (*cmpf)(void *, void *));
+void				ft_rb_node_print(t_rb_node *root, int spaces);
 #endif

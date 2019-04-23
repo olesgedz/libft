@@ -36,7 +36,8 @@ ft_stack_print.c ft_stack_create.c ft_stack_push.c ft_stack_pop.c\
 ft_stack_peek.c ft_lst2w_pushback.c ft_lst2w_new.c ft_memprint.c\
 ft_print_node.c ft_btree_create_node.c ft_btree_apply_prefix.c ft_btree_apply_infix.c\
 ft_btree_apply_suffix.c ft_btree_insert_data.c ft_btree_search_item.c ft_btree_level_count.c\
-ft_queue_push.c ft_queue_pop.c ft_btree_apply_by_level.c ft_btree_print.c
+ft_queue_push.c ft_queue_pop.c ft_btree_apply_by_level.c ft_btree_print.c ft_rb_node_create.c\
+ft_rb_insert.c ft_rb_node_print.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
@@ -85,7 +86,11 @@ clean:
 nu:
 	@echo -ne "\r [`expr $(CURRENT_FILES) '*' 100 / $(TOTAL_FILES)`%]"
 
+test: $(NAME) main.c
+	@gcc -g $(NAME) main.c -I$(HEADERS_DIRECTORY) -o test
+
 fclean: clean
+	@rm -f test
 	@rm -f $(NAME)
 	@echo "$(NAME): $(RED)$(LIBFT) was deleted$(RESET)"
 
