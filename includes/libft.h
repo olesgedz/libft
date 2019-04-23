@@ -6,16 +6,47 @@
 /*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/23 03:30:53 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/04/23 08:45:34 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <stdlib.h>
 # define ABS(x)  ( (x < 0) ? -(x) : x )
 # define TRUE 1
 # define FALSE 0
+
+enum e_rb_color
+{
+	RB_BLACK,
+	RB_RED
+};
+
+typedef struct 		s_rb_node
+{
+	struct 	s_rb_node 	*parent;
+	struct 	s_rb_node 	*left;
+	struct 	s_rb_node	*right;
+	void *data;
+	enum e_rb_color	color;
+} t_rb_node;
+
+typedef struct 		s_btree
+{
+	struct s_btree 	*left;
+	struct s_btree 	*right;
+	void			*item;
+} t_btree;
+
+typedef struct	s_queue
+{
+	struct s_queue	*next;
+	struct s_btree	*node;
+	int				current_level;
+	int				is_first_elem;
+}				t_queue;
 
 typedef struct		s_list
 {
@@ -136,4 +167,21 @@ t_list				*ft_stack_peek(t_stack *stack);
 void				ft_lst2w_pushback(t_list2w *begin, t_list2w *new);
 t_list2w			*ft_lst2w_new(void *content, size_t content_size);
 void				ft_memprint(void *s, size_t n);
+
+
+
+void		ft_print_node(void *item);
+t_btree		*ft_btree_create_node(void *item);
+void    ft_btree_apply_prefix(t_btree *root, void (*applyf)(void *));
+void    ft_btree_apply_infix(t_btree *root, void (*applyf)(void*));
+void        ft_btree_apply_suffix(t_btree *root, void (*applyf)(void*));
+void    ft_btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *));
+void    *ft_btree_search_item(t_btree *root, void *data_ref,\
+        int (*cmpf)(void *, void *));
+int     ft_btree_level_count(t_btree *root);
+void	ft_queue_push(t_queue **queue, t_btree *root, int current_level);
+t_queue	*ft_queue_pop(t_queue **queue);
+void	ft_btree_apply_by_level(t_btree *root\
+		, void (*applyf)(void *item, int current_level, int is_first_elem));
+void ft_btree_print(t_btree *root, int spaces);
 #endif
