@@ -37,7 +37,8 @@ ft_stack_peek.c ft_lst2w_pushback.c ft_lst2w_new.c ft_memprint.c\
 ft_print_node.c ft_btree_create_node.c ft_btree_apply_prefix.c ft_btree_apply_infix.c\
 ft_btree_apply_suffix.c ft_btree_insert_data.c ft_btree_search_item.c ft_btree_level_count.c\
 ft_queue_push.c ft_queue_pop.c ft_btree_apply_by_level.c ft_btree_print.c ft_rb_node_create.c\
-ft_rb_insert.c ft_rb_node_print.c
+ft_rb_insert.c ft_rb_node_print.c ft_realloc.c\
+vector_add.c vector_delete.c vector_free.c vector_get.c vector_init.c vector_set.c vector_total.c vector_resize.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
