@@ -2,7 +2,7 @@ NAME=libft.a
 
 CC=gcc
 
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS= -O3 -Wall -Wextra -Werror
 
 INCLUDES = -I$(HEADERS_DIRECTORY)
 HEADERS_LIST =libft.h
