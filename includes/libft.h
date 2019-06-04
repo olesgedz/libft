@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/23 20:28:03 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/05/18 09:53:35 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,27 @@
 # define ABS(x)  ( (x < 0) ? -(x) : x )
 # define TRUE 1
 # define FALSE 0
+#define VECTOR_INIT_CAPACITY 4
+
+typedef struct s_vector t_vector;
+typedef void	(*t_f_vector_add)(t_vector *v, void * item);
+typedef void	(*t_f_vector_set)(t_vector *v, int id, void * item);
+typedef void	*(*t_f_vector_get)(t_vector *v, int id);
+typedef void	(*t_f_vector_delete)(t_vector *v, int id);
+typedef int		(*t_f_vector_total)(t_vector *v);
+typedef void	(*t_f_vector_free)(t_vector *v);
+
+struct s_vector {
+    void **items;
+    int capacity;
+    int total;
+	t_f_vector_add add;
+	t_f_vector_set set;
+	t_f_vector_get get;
+	t_f_vector_delete del;
+	t_f_vector_total length;
+	t_f_vector_free free;
+}; 
 
 enum e_rb_color
 {
@@ -136,6 +157,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+void				*ft_realloc(void *ptr, size_t size);
 void				ft_lstprint(t_list *list);
 int					ft_arraymax(int *array, size_t length);
 int					ft_arraymin(int *array, size_t length);
@@ -189,4 +211,13 @@ void				ft_btree_print(t_btree *root, int spaces);
 t_rb_node			*ft_rb_node_create(void *data);
 void				ft_rb_insert(t_rb_node **root, void *data, int (*cmpf)(void *, void *));
 void				ft_rb_node_print(t_rb_node *root, int spaces);
+void vector_init(t_vector *);
+int vector_total(t_vector *);
+void vector_resize(t_vector *, int);
+void vector_add(t_vector *, void *);
+void vector_set(t_vector *, int, void *);
+void *vector_get(t_vector *, int);
+void vector_delete(t_vector *, int);
+void vector_free(t_vector *);
+void vector_resize(t_vector *v, int capacity);
 #endif
