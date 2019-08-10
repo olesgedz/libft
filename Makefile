@@ -38,7 +38,8 @@ standart/ft_print_node.c btree/ft_btree_create_node.c btree/ft_btree_apply_prefi
 btree/ft_btree_apply_suffix.c btree/ft_btree_insert_data.c btree/ft_btree_search_item.c btree/ft_btree_level_count.c\
 queue/ft_queue_push.c queue/ft_queue_pop.c btree/ft_btree_apply_by_level.c btree/ft_btree_print.c rb_tree/ft_rb_node_create.c\
 rb_tree/ft_rb_insert.c rb_tree/ft_rb_node_print.c standart/ft_realloc.c\
-vector/vector_add.c vector/vector_delete.c vector/vector_free.c vector/vector_get.c vector/vector_init.c vector/vector_set.c vector/vector_total.c vector/vector_resize.c
+vector/vector_add.c vector/vector_delete.c vector/vector_free.c vector/vector_get.c vector/vector_init.c vector/vector_set.c vector/vector_total.c vector/vector_resize.c\
+get_next_line/read_file.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 

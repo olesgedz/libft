@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/05/18 09:53:35 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/08/10 17:02:45 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,4 +220,5 @@ void *vector_get(t_vector *, int);
 void vector_delete(t_vector *, int);
 void vector_free(t_vector *);
 void vector_resize(t_vector *v, int capacity);
+char		*read_file(int fd, size_t *size);
 #endif
