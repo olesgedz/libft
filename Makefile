@@ -13,32 +13,32 @@ HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 SOURCES_DIRECTORY = sources/
 
-SOURCES_LIST=ft_memset.c ft_bzero.c ft_memcpy.c  ft_memccpy.c \
-ft_memmove.c ft_memchr.c ft_memcmp.c ft_memalloc.c \
-ft_memdel.c \
-ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c \
-ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strstr.c ft_strnstr.c \
-ft_strcmp.c ft_strncmp.c ft_atoi.c \
-ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-ft_toupper.c ft_tolower.c \
- ft_strnew.c ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c \
-ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
-ft_strtrim.c ft_strsplit.c \
-ft_itoa.c \
-ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
-ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c \
-ft_lstprint.c ft_arraymax.c ft_arraymin.c ft_swap_int.c ft_arrayprint.c \
-ft_arraysort.c ft_lstdel_u.c ft_lstdelmid.c ft_ptr_free.c get_next_line.c \
-ft_printmap.c ft_2darrayclean.c ft_2darraynew.c ft_point_new.c ft_lstcount.c \
-ft_lstrev.c ft_is_space.c ft_countwords.c ft_strnewch.c  ft_sign.c\
-ft_stack_print.c ft_stack_create.c ft_stack_push.c ft_stack_pop.c\
-ft_stack_peek.c ft_lst2w_pushback.c ft_lst2w_new.c ft_memprint.c\
-ft_print_node.c ft_btree_create_node.c ft_btree_apply_prefix.c ft_btree_apply_infix.c\
-ft_btree_apply_suffix.c ft_btree_insert_data.c ft_btree_search_item.c ft_btree_level_count.c\
-ft_queue_push.c ft_queue_pop.c ft_btree_apply_by_level.c ft_btree_print.c ft_rb_node_create.c\
-ft_rb_insert.c ft_rb_node_print.c ft_realloc.c\
-vector_add.c vector_delete.c vector_free.c vector_get.c vector_init.c vector_set.c vector_total.c vector_resize.c
+SOURCES_LIST= mem/ft_memset.c mem/ft_bzero.c mem/ft_memcpy.c mem/ft_memccpy.c \
+mem/ft_memmove.c mem/ft_memchr.c mem/ft_memcmp.c mem/ft_memalloc.c \
+mem/ft_memdel.c \
+str/ft_strlen.c str/ft_strdup.c str/ft_strcpy.c str/ft_strncpy.c str/ft_strcat.c str/ft_strncat.c \
+str/ft_strlcat.c str/ft_strchr.c str/ft_strrchr.c str/ft_strstr.c str/ft_strnstr.c \
+str/ft_strcmp.c str/ft_strncmp.c standart/ft_atoi.c \
+standart/ft_isalpha.c standart/ft_isdigit.c standart/ft_isalnum.c standart/ft_isascii.c standart/ft_isprint.c \
+standart/ft_toupper.c standart/ft_tolower.c \
+str/ft_strnew.c str/ft_strdel.c str/ft_strclr.c str/ft_striter.c str/ft_striteri.c \
+str/ft_strmap.c str/ft_strmapi.c str/ft_strequ.c str/ft_strnequ.c str/ft_strsub.c str/ft_strjoin.c \
+str/ft_strtrim.c str/ft_strsplit.c \
+standart/ft_itoa.c \
+standart/ft_putchar.c standart/ft_putstr.c standart/ft_putendl.c standart/ft_putnbr.c standart/ft_putchar_fd.c \
+standart/ft_putstr_fd.c standart/ft_putendl_fd.c standart/ft_putnbr_fd.c \
+lst/ft_lstadd.c lst/ft_lstdel.c lst/ft_lstdelone.c lst/ft_lstiter.c lst/ft_lstmap.c lst/ft_lstnew.c \
+lst/ft_lstprint.c array/ft_arraymax.c array/ft_arraymin.c standart/ft_swap_int.c array/ft_arrayprint.c \
+array/ft_arraysort.c lst/ft_lstdel_u.c lst/ft_lstdelmid.c standart/ft_ptr_free.c get_next_line/get_next_line.c \
+standart/ft_printmap.c array/ft_2darrayclean.c array/ft_2darraynew.c standart/ft_point_new.c lst/ft_lstcount.c \
+lst/ft_lstrev.c standart/ft_is_space.c standart/ft_countwords.c str/ft_strnewch.c  standart/ft_sign.c\
+stack/ft_stack_print.c stack/ft_stack_create.c stack/ft_stack_push.c stack/ft_stack_pop.c\
+stack/ft_stack_peek.c lst/ft_lst2w_pushback.c lst/ft_lst2w_new.c mem/ft_memprint.c\
+standart/ft_print_node.c btree/ft_btree_create_node.c btree/ft_btree_apply_prefix.c btree/ft_btree_apply_infix.c\
+btree/ft_btree_apply_suffix.c btree/ft_btree_insert_data.c btree/ft_btree_search_item.c btree/ft_btree_level_count.c\
+queue/ft_queue_push.c queue/ft_queue_pop.c btree/ft_btree_apply_by_level.c btree/ft_btree_print.c rb_tree/ft_rb_node_create.c\
+rb_tree/ft_rb_insert.c rb_tree/ft_rb_node_print.c standart/ft_realloc.c\
+vector/vector_add.c vector/vector_delete.c vector/vector_free.c vector/vector_get.c vector/vector_init.c vector/vector_set.c vector/vector_total.c vector/vector_resize.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
@@ -92,7 +92,6 @@ test: $(NAME) main.c
 	@gcc -g $(NAME) main.c -I$(HEADERS_DIRECTORY) -o test
 
 fclean: clean
-	@rm -f test
 	@rm -f $(NAME)
 	@echo "$(NAME): $(RED)$(LIBFT) was deleted$(RESET)"
 
