@@ -15,7 +15,7 @@ SOURCES_DIRECTORY = sources/
 
 SOURCES_LIST= mem/ft_memset.c mem/ft_bzero.c mem/ft_memcpy.c mem/ft_memccpy.c \
 mem/ft_memmove.c mem/ft_memchr.c mem/ft_memcmp.c mem/ft_memalloc.c \
-mem/ft_memdel.c \
+mem/ft_memdel.c mem/ft_malloc_err.c mem/ft_mempcpy.c\
 str/ft_strlen.c str/ft_strdup.c str/ft_strcpy.c str/ft_strncpy.c str/ft_strcat.c str/ft_strncat.c \
 str/ft_strlcat.c str/ft_strchr.c str/ft_strrchr.c str/ft_strstr.c str/ft_strnstr.c \
 str/ft_strcmp.c str/ft_strncmp.c standart/ft_atoi.c \
@@ -23,7 +23,7 @@ standart/ft_isalpha.c standart/ft_isdigit.c standart/ft_isalnum.c standart/ft_is
 standart/ft_toupper.c standart/ft_tolower.c \
 str/ft_strnew.c str/ft_strdel.c str/ft_strclr.c str/ft_striter.c str/ft_striteri.c \
 str/ft_strmap.c str/ft_strmapi.c str/ft_strequ.c str/ft_strnequ.c str/ft_strsub.c str/ft_strjoin.c \
-str/ft_strtrim.c str/ft_strsplit.c \
+str/ft_strtrim.c str/ft_strsplit.c  str/ft_nsplit.c str/ft_word.c\
 standart/ft_itoa.c \
 standart/ft_putchar.c standart/ft_putstr.c standart/ft_putendl.c standart/ft_putnbr.c standart/ft_putchar_fd.c \
 standart/ft_putstr_fd.c standart/ft_putendl_fd.c standart/ft_putnbr_fd.c \

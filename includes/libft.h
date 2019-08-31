@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/08/10 17:02:45 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/08/30 19:34:00 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdlib.h>
-# define ABS(x)  ( (x < 0) ? -(x) : x )
 # define TRUE 1
 # define FALSE 0
 #define VECTOR_INIT_CAPACITY 4
+# define BZERO(a)		ft_bzero(&a, sizeof(a))
+# define MEMCHR(a, b)	ft_memchr((a), (b), sizeof(a) - 1)
+# define VSPLIT(v, x)	ft_nsplit((v).data, (v).used, x, sizeof(x) - 1)
+# define STRTOB10(s, x)	fmt_atoi(s, (unsigned long *)&x, 10, 0)
 
+# define MIN(a,b)	((a <= b) ? a : b)
+# define MAX(a,b)	((a > b) ? a : b)
+# define ABS(x)		(((x) < 0) ? (-x) : (x))
 typedef struct s_vector t_vector;
 typedef void	(*t_f_vector_add)(t_vector *v, void * item);
 typedef void	(*t_f_vector_set)(t_vector *v, int id, void * item);
@@ -221,4 +227,11 @@ void vector_delete(t_vector *, int);
 void vector_free(t_vector *);
 void vector_resize(t_vector *v, int capacity);
 char		*read_file(int fd, size_t *size);
+
+void		ft_malloc_err
+	(size_t size,\
+	 const char *func, const char *file, int line);
+unsigned char	**ft_nsplit(void *s, size_t n1, void *match, size_t n2);
+unsigned char	*ft_word(void **p, size_t *n1, void *match, size_t n2);
+void		*ft_mempcpy(void *dest, const void *src, size_t n);
 #endif
