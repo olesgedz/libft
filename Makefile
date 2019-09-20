@@ -29,7 +29,7 @@ standart/ft_putchar.c standart/ft_putstr.c standart/ft_putendl.c standart/ft_put
 standart/ft_putstr_fd.c standart/ft_putendl_fd.c standart/ft_putnbr_fd.c \
 lst/ft_lstadd.c lst/ft_lstdel.c lst/ft_lstdelone.c lst/ft_lstiter.c lst/ft_lstmap.c lst/ft_lstnew.c \
 lst/ft_lstprint.c array/ft_arraymax.c array/ft_arraymin.c standart/ft_swap_int.c array/ft_arrayprint.c \
-array/ft_arraysort.c lst/ft_lstdel_u.c lst/ft_lstdelmid.c standart/ft_ptr_free.c get_next_line/get_next_line.c \
+array/ft_arraysort.c lst/ft_lstdel_u.c lst/ft_lstdelmid.c  get_next_line/get_next_line.c \
 standart/ft_printmap.c array/ft_2darrayclean.c array/ft_2darraynew.c standart/ft_point_new.c lst/ft_lstcount.c \
 lst/ft_lstrev.c standart/ft_is_space.c standart/ft_countwords.c str/ft_strnewch.c  standart/ft_sign.c\
 stack/ft_stack_print.c stack/ft_stack_create.c stack/ft_stack_push.c stack/ft_stack_pop.c\

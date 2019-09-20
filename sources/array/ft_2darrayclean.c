@@ -6,7 +6,7 @@
 /*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 01:03:57 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/01/07 01:05:31 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/09/20 20:00:25 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,8 @@ int		ft_2darrayclean(char ***dst)
 
 	i = 0;
 	while ((*dst)[i])
-	{
-		free((*dst)[i]);
-		(*dst)[i] = NULL;
-		i++;
-	}
-	free(*dst);
-	*dst = NULL;
+		ft_memdel((void **)&(*dst)[i++]);
+	ft_memdel((void **)(*dst));
 	dst = NULL;
 	return (1);
 }

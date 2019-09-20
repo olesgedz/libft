@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 16:20:41 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/01/17 10:49:53 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/09/20 20:12:07 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static t_list		*ft_getfile(t_list **file, int fd)
 		}
 		tmp = tmp->next;
 	}
-	if (!tmp)
-		MALLOC_CHECK_NULL(tmp = ft_lstnew("", fd));
+	if (!tmp && !(tmp = ft_lstnew("", fd)))
+		return (NULL);
 	ft_lstadd(file, tmp);
 	tmp = *file;
 	return (tmp);
@@ -51,7 +51,7 @@ static char			*ft_getline(t_list *lst, char **line)
 		(i < ft_strlen((char *)lst->content)) ? lst->content = \
 		ft_strdup((char *)lst->content + i + 1)\
 		: ft_strclr((char *)lst->content);
-		ft_ptr_free(&temp);
+		ft_memdel((void **)&temp);
 	}
 	else
 	{
@@ -70,8 +70,8 @@ int					get_next_line(const int fd, char **line)
 	char			*temp;
 	char			*buf;
 
-	buf = NULL;
-	MALLOC_CHECK_INT(buf = malloc(BUFF_SIZE + 1));
+	if(!(buf = malloc(BUFF_SIZE + 1)))
+		return (0);
 	if (fd < 0 || !line || read(fd, buf, 0) < 0 || BUFF_SIZE < 1)
 		return (-1);
 	lst = ft_getfile(&file, fd);
@@ -80,11 +80,11 @@ int					get_next_line(const int fd, char **line)
 		buf[ret] = '\0';
 		temp = (char *)lst->content;
 		lst->content = ft_strjoin((char *)lst->content, buf);
-		ft_ptr_free(&temp);
+		ft_memdel((void **)&temp);
 		if (ft_strchr((char *)lst->content, '\n'))
 			break ;
 	}
-	ft_ptr_free(&buf);
+	ft_memdel((void **)&buf);
 	if (ret < BUFF_SIZE && !ft_strlen((char *)lst->content))
 		return (0);
 	*line = ft_getline(lst, line);
