@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/09/20 21:29:33 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/10/11 16:14:38 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,4 +233,5 @@ void		ft_malloc_err
 unsigned char	**ft_nsplit(void *s, size_t n1, void *match, size_t n2);
 unsigned char	*ft_word(void **p, size_t *n1, void *match, size_t n2);
 void		*ft_mempcpy(void *dest, const void *src, size_t n);
+void	ft_2darray_uchar_free(unsigned char ***tab);
 #endif
