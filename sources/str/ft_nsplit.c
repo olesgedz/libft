@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nsplit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 17:41:51 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/08/30 17:42:10 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/10/17 15:29:48 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ unsigned char	**ft_nsplit(void *s, size_t n1, void *match, size_t n2)
 	n = n1;
 	while (ft_word(&s1, &n, match, n2))
 		count++;
-	MALLOC_N(ret, (count + 1));
+	ret = ft_memalloc(sizeof(*ret) * (count + 1));
 	while ((buf = ft_word(&s, &n1, match, n2)))
 	{
-		MALLOC(*ret, ((unsigned char *)s - buf + 1));
+		*ret = malloc(sizeof(*ret) * (count + 1));
 		ft_memcpy(*ret, buf, (unsigned char *)s - buf);
 		(*ret)[(unsigned char *)s - buf] = '\0';
 		ret++;
