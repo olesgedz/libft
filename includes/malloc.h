@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   malloc.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qle-guen <qle-guen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 17:54:13 by qle-guen          #+#    #+#             */
-/*   Updated: 2017/02/09 16:07:10 by qle-guen         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:25:08 by lminta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define MALLOC1_ZERO(p) MALLOC_ZERO(p, 1)
 
 void	*ft_null(size_t size);
-void	ft_malloc_err
-	(size_t size, const char *func, const char *file, int line);
+void	ft_malloc_err(size_t size, const char *func,
+const char *file, int line);
 
 #endif

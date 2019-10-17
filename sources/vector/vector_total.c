@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   vector_total.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 08:41:24 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/05/18 09:52:42 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:52:13 by lminta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int vector_total(t_vector *v)
+int	vector_total(t_vector *v)
 {
-    return v->total;
+	return (v->total);
 }

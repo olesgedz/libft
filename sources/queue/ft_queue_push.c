@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_queue_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 07:20:33 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/04/23 07:20:52 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:39:06 by lminta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 void	ft_queue_push(t_queue **queue, t_btree *root, int current_level)
 {

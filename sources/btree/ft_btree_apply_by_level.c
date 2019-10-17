@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_btree_apply_by_level.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 07:23:19 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/04/23 07:23:40 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:26:43 by lminta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- void	ft_btree_apply_by_level(t_btree *root
-		, void (*applyf)(void *item, int current_level, int is_first_elem))
+void	ft_btree_apply_by_level(t_btree *root,
+void (*applyf)(void *item, int current_level, int is_first_elem))
 {
 	t_queue	*queue;
 	t_queue	*pop;
