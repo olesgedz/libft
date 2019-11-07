@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nsplit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 17:41:51 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/10/17 17:45:37 by lminta           ###   ########.fr       */
+/*   Updated: 2019/11/08 00:46:42 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "malloc.h"
 
 unsigned char	**ft_nsplit(void *s, size_t n1, void *match, size_t n2)
 {
