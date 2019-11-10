@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:41:19 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/10/17 17:22:58 by lminta           ###   ########.fr       */
+/*   Updated: 2019/11/08 19:51:49 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,4 +234,5 @@ unsigned char			**ft_nsplit(void *s, size_t n1, void *match, size_t n2);
 unsigned char			*ft_word(void **p, size_t *n1, void *match, size_t n2);
 void					*ft_mempcpy(void *dest, const void *src, size_t n);
 void					ft_2darray_uchar_free(unsigned char ***tab);
+void					ft_terminate(char *str);
 #endif

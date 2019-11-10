@@ -26,7 +26,7 @@ str/ft_strmap.c str/ft_strmapi.c str/ft_strequ.c str/ft_strnequ.c str/ft_strsub.
 str/ft_strtrim.c str/ft_strsplit.c  str/ft_nsplit.c str/ft_word.c\
 standart/ft_itoa.c \
 standart/ft_putchar.c standart/ft_putstr.c standart/ft_putendl.c standart/ft_putnbr.c standart/ft_putchar_fd.c \
-standart/ft_putstr_fd.c standart/ft_putendl_fd.c standart/ft_putnbr_fd.c \
+standart/ft_putstr_fd.c standart/ft_putendl_fd.c standart/ft_putnbr_fd.c standart/ft_terminate.c \
 lst/ft_lstadd.c lst/ft_lstdel.c lst/ft_lstdelone.c lst/ft_lstiter.c lst/ft_lstmap.c lst/ft_lstnew.c \
 lst/ft_lstprint.c array/ft_arraymax.c array/ft_arraymin.c standart/ft_swap_int.c array/ft_arrayprint.c \
 array/ft_arraysort.c array/ft_2darray_uchar_free.c lst/ft_lstdel_u.c lst/ft_lstdelmid.c  get_next_line/get_next_line.c \
